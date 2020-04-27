@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_27_171229) do
+ActiveRecord::Schema.define(version: 2020_04_27_221828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_04_27_171229) do
     t.integer "server_id"
     t.float "value"
     t.text "interface_name"
+    t.index ["server_id", "interface_name"], name: "index_bandwidths_on_server_id_and_interface_name", unique: true
   end
 
   create_table "servers", force: :cascade do |t|
