@@ -1,6 +1,7 @@
 class CreateServersInitial < ActiveRecord::Migration[6.0]
   def change
 
+    #Таблица сервер
     create_table :servers do |t|
       t.string :name
     end
@@ -10,6 +11,8 @@ class CreateServersInitial < ActiveRecord::Migration[6.0]
       t.float :value
       t.text :interface_name
     end
+    
+    #Сырой запрос на добавлене столбца
     execute "ALTER TABLE bandwidths ADD COLUMN value_id SERIAL PRIMARY KEY;"
   end
 end

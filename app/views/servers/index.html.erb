@@ -1,0 +1,11 @@
+<h1>Servers</h1>
+
+<table>
+  
+  <% @servers.each do |obj| %>
+    <tr>
+      <td><%= link_to "Server #{obj.id}", obj %></td>
+    </tr>
+  <% end %>
+
+</table>
